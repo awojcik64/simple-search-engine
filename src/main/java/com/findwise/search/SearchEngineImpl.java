@@ -17,10 +17,10 @@ public class SearchEngineImpl implements SearchEngine {
     public void indexDocument(String id, String content) {
         this.documents.put(id, content);
         String[] words = tokenizeDocument(content.toLowerCase());
-        var wordMap = getCountedWordsMap(words);
+        var wordCountMap = getCountedWordsMap(words);
 
-        for (String word : new ArrayList<>(wordMap.keySet())) {
-            IndexEntry entry = new IndexEntryImpl(id, (double)wordMap.get(word)/words.length);
+        for (String word : new ArrayList<>(wordCountMap.keySet())) {
+            IndexEntry entry = new IndexEntryImpl(id, (double)wordCountMap.get(word)/words.length);
             if(wordIndexEntries.containsKey(word)) {
                 wordIndexEntries.get(word).add(entry);
             }
@@ -49,16 +49,16 @@ public class SearchEngineImpl implements SearchEngine {
     }
 
     private Map<String, Integer> getCountedWordsMap(String[] words) {
-        var wordMap = new HashMap<String, Integer>();
+        var wordCountMap = new HashMap<String, Integer>();
         for (String word : words) {
-            if(!wordMap.containsKey(word)) {
-                wordMap.put(word, 1);
+            if(!wordCountMap.containsKey(word)) {
+                wordCountMap.put(word, 1);
             }
             else {
-                wordMap.put(word, wordMap.get(word)+1);
+                wordCountMap.put(word, wordCountMap.get(word)+1);
             }
         }
-        return wordMap;
+        return wordCountMap;
     }
 
     private double getInverseDocumentFrequency(String term) {
