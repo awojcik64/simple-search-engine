@@ -16,7 +16,7 @@ public class SearchCommand extends Command {
         this.searchEngine
                 .search(scanner.nextLine())
                 .forEach(entry -> {
-                    System.out.println("DocumentID: " + entry.getId() + ", document relevance score: "+entry.getScore());
+                    System.out.println("DocumentID: " + entry.getId() + ", document score: "+entry.getScore());
                 });
     }
 }
