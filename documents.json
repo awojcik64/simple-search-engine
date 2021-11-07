@@ -1,0 +1,14 @@
+[
+	{
+		"id":"Document 1",
+		"content": "the brown fox jumped over the brown dog"
+	},
+	{
+		"id":"Document 2",
+		"content": "the lazy brown dog sat in the corner"
+	},
+	{
+		"id":"Document 3",
+		"content": "the red fox bit the lazy dog"
+	}
+]
