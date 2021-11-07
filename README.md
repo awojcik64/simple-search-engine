@@ -1,15 +1,18 @@
 # Search Engine App
 
-A command line app implementation of a simple search engine based on TF*IDF algorithm.
+A command line implementation of a simple search engine based on TF*IDF algorithm.
 
 
 ## Usage
 
-- Launch the output jar file from command line:  
+* Launch the output jar file from command line:  
 ``` java -jar SearchEngineApp-1.0-SNAPSHOT-jar-with-dependencies.jar```  
 A main menu will show, like below:
 
 ![Main menu](doc/img/menu.png "Main menu")  
+
+Selection of a specific option is being done by entering it's number.  
+After command execution program returns to the main menu (unless it was an exit command)
 
 * For indexing by menu option, select option 1. You will be prompted for document ID and it's content  
 
@@ -24,6 +27,8 @@ A main menu will show, like below:
 ![Search output](doc/img/search-output.png "Read documents from file")  
 
 Output consists of document IDs along with their tf*idf score.
+
+* Exit the aplication by selecting option 9.
 
 ## Side notes
 - Example in the provided task contains a mistake in the output for "fox" keyword:  
