@@ -2,6 +2,16 @@
 
 A command line implementation of a simple search engine based on TF*IDF algorithm.
 
+## Requirements
+
+* Maven installation
+* JDK 11 or newer
+
+## Build
+
+Build the project with the following command:  
+```mvn clean package```  
+Output jar file should be present in target/ subdirectory.
 
 ## Usage
 
