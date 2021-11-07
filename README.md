@@ -24,7 +24,7 @@ A main menu will show, like below:
 Selection of a specific option is being done by entering it's number.  
 After command execution program returns to the main menu (unless it was an exit command)
 
-* For indexing by menu option, select option 1. You will be prompted for document ID and it's content  
+* To index a document, select option 1. You will be prompted for document ID and it's content  
 
 ![Index by menu](doc/img/index-by-menu.png "Index by menu")  
 
@@ -32,7 +32,7 @@ After command execution program returns to the main menu (unless it was an exit 
 
 ![Read documents from file](doc/img/read-documents-from-files.png "Read documents from file")  
 
-* In order to make a search query, select option 3, and type the keyword.
+* In order to make a search query, select option 1, and type the keyword.
 
 ![Search output](doc/img/search-output.png "Read documents from file")  
 
