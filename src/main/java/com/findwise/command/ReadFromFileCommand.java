@@ -1,22 +1,28 @@
 package com.findwise.command;
 
-import com.findwise.config.ApplicationConfig;
 import com.findwise.io.FileStore;
 import com.findwise.SearchEngine;
+import lombok.Getter;
 
 import java.util.Map;
 import java.util.Scanner;
 
-public class ReadFromFileCommand extends Command{
+public class ReadFromFileCommand implements Command{
 
-    private ApplicationConfig config;
+    final private SearchEngine searchEngine;
 
-    private FileStore fileStore;
+    final private Scanner scanner;
 
-    public ReadFromFileCommand(SearchEngine searchEngine, Scanner scanner, String name) {
-        super(searchEngine, scanner, name);
-        this.config = ApplicationConfig.getInstance();
-        this.fileStore = this.config.getFileStore();
+    final private FileStore fileStore;
+
+    @Getter
+    final private String name;
+
+    public ReadFromFileCommand(SearchEngine searchEngine, Scanner scanner, FileStore fileStore, String name) {
+        this.searchEngine = searchEngine;
+        this.scanner = scanner;
+        this.fileStore = fileStore;
+        this.name = name;
     }
 
     @Override

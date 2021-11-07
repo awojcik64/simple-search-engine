@@ -1,18 +1,20 @@
 package com.findwise.command;
 
 import com.findwise.SearchEngine;
+import com.findwise.exception.ExitApplicationException;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.Scanner;
 
-public class ExitCommand extends Command{
-    public ExitCommand(SearchEngine searchEngine, Scanner scanner, String name) {
-        super(searchEngine, scanner, name);
-    }
+@AllArgsConstructor
+public class ExitCommand implements Command{
+    @Getter
+    final private String name;
 
     @Override
-    public void execute() {
+    public void execute() throws Exception{
         System.out.println("Exiting application...");
-        scanner.close();
-        System.exit(0);
+        throw new ExitApplicationException("");
     }
 }
