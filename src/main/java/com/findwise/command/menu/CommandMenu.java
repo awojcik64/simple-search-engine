@@ -2,6 +2,7 @@ package com.findwise.command.menu;
 
 import com.findwise.command.*;
 import com.findwise.SearchEngine;
+import lombok.NoArgsConstructor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,11 +11,8 @@ import java.util.Scanner;
 public class CommandMenu {
     private Map<Integer, Command> commands = new HashMap<>();
 
-    public CommandMenu(SearchEngine searchEngine, Scanner scanner) {
-        this.commands.put(1, new SearchCommand(searchEngine, scanner, "Search term"));
-        this.commands.put(2, new IndexCommand(searchEngine, scanner, "Index document"));
-        this.commands.put(3, new ReadFromFileCommand(searchEngine, scanner, "Read documents from file"));
-        this.commands.put(9, new ExitCommand(searchEngine, scanner, "Exit application"));
+    public void registerCommand(int number, Command command) {
+        this.commands.put(number, command);
     }
 
     public void displayMenu() {
@@ -25,7 +23,7 @@ public class CommandMenu {
                 .forEach(entry -> System.out.println(entry.getKey() + ". " + entry.getValue().getName()));
     }
 
-    public void execute(Integer index) {
+    public void execute(Integer index) throws Exception{
         if(this.commands.containsKey(index)) {
             this.commands.get(index).execute();
         }

@@ -1,13 +1,23 @@
 package com.findwise.command;
 
 import com.findwise.SearchEngine;
+import lombok.Getter;
 
 import java.util.Scanner;
 
-public class IndexCommand extends Command {
+public class IndexCommand implements Command {
+
+    final private SearchEngine searchEngine;
+
+    final private Scanner scanner;
+
+    @Getter
+    final private String name;
 
     public IndexCommand(SearchEngine searchEngine, Scanner scanner, String name) {
-        super(searchEngine, scanner, name);
+        this.searchEngine = searchEngine;
+        this.scanner = scanner;
+        this.name = name;
     }
 
     @Override
